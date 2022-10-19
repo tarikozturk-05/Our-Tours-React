@@ -46,13 +46,15 @@ function App() {
 
    if(data.length === 0){
     return(
-      <main>
+      <main className='textCenter'>
         <div className='title'>
           <h2>No Tours left</h2>
           <button className='btn' onClick={() => axiosTours()}>
             Refresh
           </button>
+         
         </div>
+        <img className='ankaKusu'  height={"150px"} src="https://ca.slack-edge.com/T03LBL87DA8-U03MX0ZCV2L-bde228c1e694-512" alt="" />
       </main>
     )
    }

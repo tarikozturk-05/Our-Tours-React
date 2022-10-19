@@ -121,7 +121,11 @@ p {
   }
 }
 /*  global classes */
+.textCenter{
+  text-align: center;
+}
 .ankaKusu{
+  
 /* translate: all; */
 border-radius: 50%;
 
