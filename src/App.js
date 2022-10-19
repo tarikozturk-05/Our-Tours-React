@@ -7,29 +7,63 @@ import Tours from './Tours'
 const url = 'https://course-api.com/react-tours-project'
 function App() {
    
-    
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
+
+    const deleteTour=(id)=>{
+      const newTour = data.filter((tour)=>tour.id !== id)
+      setData(newTour)
+
+    }
     
 
     const axiosTours =async()=>{
+      setLoading(true)
+
       try {
           const response = await axios(url);
           setData(response.data)
+            setLoading(false)
+          
       } catch (error) {
+        setLoading(true)
         console.log(error);
       }
     }
    useEffect(() => {
      
-    axiosTours()
+ setTimeout(() => {
+  axiosTours()
+ }, 1200);
     
    }, [])
+   if(loading){
+    return(
+      <main>
+        <Loading/>
+      </main>
+    )
+   }
+
+   if(data.length === 0){
+    return(
+      <main>
+        <div className='title'>
+          <h2>No Tours left</h2>
+          <button className='btn' onClick={() => axiosTours()}>
+            Refresh
+          </button>
+        </div>
+      </main>
+    )
+   }
+
    
   
-console.log(data)
+// console.log(data)
   return(
       <div>
-        <Tours data={data} setData={setData} />
+        <Tours data={data} deleteTour={deleteTour}  />
 
       </div>
   ) 

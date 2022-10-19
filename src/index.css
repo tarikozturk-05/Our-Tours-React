@@ -125,7 +125,7 @@ p {
 .section {
   width: 90vw;
   margin: 0 auto;
-  max-width: var(--max-width);
+  max-width: 1170px;
 }
 
 @media screen and (min-width: 992px) {

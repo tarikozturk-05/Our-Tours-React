@@ -1,12 +1,12 @@
 import React from 'react';
 import Tour from './Tour';
-const Tours = ({setData,data}) => {
+const Tours = ({deleteTour,data}) => {
   // const [item, setItem] = useState("")
 
   return (
-    <div>
+    <div className='section'>
       {
-        data.map((item)=> <Tour key={item.id}  item={item} />)
+        data.map((item,index)=> <Tour key={index} deleteTour={deleteTour}  item={item} />)
       }
 
     </div>
