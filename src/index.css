@@ -111,6 +111,7 @@ p {
   }
   body {
     font-size: 1rem;
+    
   }
   h1,
   h2,
@@ -120,6 +121,21 @@ p {
   }
 }
 /*  global classes */
+.ankaKusu{
+/* translate: all; */
+border-radius: 50%;
+
+animation: spin  4s infinite linear;
+
+ 
+}
+@keyframes spin { 
+  from { 
+      transform: rotate(0deg); 
+  } to { 
+      transform: rotate(360deg); 
+  }
+}
 
 /* section */
 .section {

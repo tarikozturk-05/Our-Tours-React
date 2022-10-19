@@ -13,7 +13,7 @@ function App() {
     const deleteTour=(id)=>{
       const newTour = data.filter((tour)=>tour.id !== id)
       setData(newTour)
-
+        
     }
     
 
@@ -26,16 +26,15 @@ function App() {
             setLoading(false)
           
       } catch (error) {
-        setLoading(true)
+        setLoading(false)
         console.log(error);
       }
     }
    useEffect(() => {
-     
- setTimeout(() => {
-  axiosTours()
- }, 1200);
-    
+    setTimeout(() => {
+      axiosTours()
+    }, 4000);
+ 
    }, [])
    if(loading){
     return(
